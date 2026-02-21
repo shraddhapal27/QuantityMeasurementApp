@@ -14,7 +14,7 @@ out/
 .project
 .classpath
 .settings/
-.mvn
+.mvn/
 
 # Logs
 *.log

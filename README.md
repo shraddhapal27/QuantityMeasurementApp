@@ -75,3 +75,21 @@ UC4-[Entended Length Class](https://github.com/shraddhapal27/QuantityMeasurement
  - Input validation for null, NaN, and infinite values
  - Overloaded conversion methods for flexibility
 UC5-[Length Unit Conversion](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC5-UnitConversion/src)
+
+---
+
+### 📅 UC6 : Length Unit Conversion API (UC5 → UC6 Enhancement)
+- Extended Length class to provide explicit conversion between any supported units (FEET, INCHES, YARDS, CENTIMETERS).
+- Introduced:
+ - Length.convert(value, sourceUnit, targetUnit) – static method for raw numeric conversion.
+ - length.convertTo(targetUnit) – instance method to convert an existing Length object.
+ - Input validation ensures null, NaN, and infinite values are handled safely.
+ - Maintains DRY principle, immutability, and backward compatibility with UC1–UC5.
+- Key Concepts:
+ - Cross-unit conversion via base-unit normalization
+ - Enum-based type-safe conversion factors
+ - Precision handling using epsilon tolerance
+ - Overloaded conversion methods for flexible API usage
+UC6-[Length Unit Conversion](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC6-UnitAddition/src)
+
+

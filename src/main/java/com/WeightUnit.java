@@ -1,16 +1,14 @@
-
 package com;
 
-public enum LengthUnit {
+public enum WeightUnit {
 
-    FEET(12.0),
-    INCHES(1.0),
-    YARDS(36.0),
-    CENTIMETERS(0.393701);
+    KILOGRAM(1.0),
+    GRAM(0.001),
+    POUND(0.453592);
 
     private final double conversionFactor;
 
-    LengthUnit(double conversionFactor) {
+    WeightUnit(double conversionFactor) {
         this.conversionFactor = conversionFactor;
     }
 
@@ -28,5 +26,3 @@ public enum LengthUnit {
         return Math.round(result * 100.0) / 100.0;
     }
 }
-
-

@@ -32,5 +32,3 @@ public enum LengthUnit implements IMeasurable{
     	return this.name();
     }
 }
-
-

@@ -180,6 +180,19 @@ Quantity(2.20462, POUND).convertTo(KILOGRAM) → Quantity(~1.0, KILOGRAM)
 Quantity(1.0, KILOGRAM).add(Quantity(1000.0, GRAM), GRAM) → Quantity(2000.0, GRAM)
 UC9-[Weight Measurement](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC9-WeightMeasurement/src)
 
+---
+
+### 📅 UC10 – Generic Measurement Refactor
+- Refactored the system to use a single generic class Quantity for all measurement categories.
+- Introduced IMeasurable interface
+- Implemented LengthUnit, WeightUnit as enums
+- Removed duplicate quantity classes
+- Ensured compile-time type safety
+- Prevented cross-category comparison
+- Easily supports new units (Volume, Time, Temperature, etc.)
+
+Result: Cleaner, scalable, and fully extensible measurement system. 
+UC10-[Generic Measurement Refactor](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC10-GenericQuantity/src)
 
 
 

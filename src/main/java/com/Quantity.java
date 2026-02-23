@@ -1,5 +1,5 @@
-package com;
 
+package com;
 
 import java.util.Objects;
 
@@ -94,3 +94,4 @@ public class Quantity<U extends IMeasurable> {
         System.out.println("1 kg + 1000 g in grams = " + w1.add(w2, WeightUnit.GRAM));
     }
 }
+

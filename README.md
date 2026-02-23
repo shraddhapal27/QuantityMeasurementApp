@@ -28,6 +28,19 @@ UC2-[InchEquality](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/
 
 ---
 
+### 📅 UC10 – Generic Measurement Refactor
+- Refactored the system to use a single generic class Quantity for all measurement categories.
+
+- Introduced IMeasurable interface
+- Implemented LengthUnit, WeightUnit as enums
+- Removed duplicate quantity classes
+- Ensured compile-time type safety
+- Prevented cross-category comparison
+- Easily supports new units (Volume, Time, Temperature, etc.)
+- Result: Cleaner, scalable, and fully extensible measurement system.
+UC10-[Generic Measurement Refactor](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC10-GenericQuantity/src)
+
+
 ### 📅 UC7: Addition with Target Unit Specification
 - Supports addition of two lengths with the ability to explicitly specify the target unit for the result. Extends UC6 by allowing flexibility in choosing the result unit instead of defaulting to the first operand’s unit. Ensures accurate conversions, commutativity, and immutability.
 - Key Concepts

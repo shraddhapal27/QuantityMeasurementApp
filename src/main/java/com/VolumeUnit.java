@@ -13,7 +13,6 @@ public enum VolumeUnit implements IMeasurable {
         this.conversionFactor = conversionFactor;
     }
 
-    @Override
     public double getConversionFactor() {
         return conversionFactor;
     }
@@ -28,9 +27,7 @@ public enum VolumeUnit implements IMeasurable {
         return baseValue / conversionFactor;
     }
 
-    @Override
     public String getUnitName() {
         return name();
     }
 }
-

@@ -28,31 +28,6 @@ UC2-[InchEquality](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/
 
 ---
 
-### 📅 UC10 – Generic Measurement Refactor
-- Refactored the system to use a single generic class Quantity for all measurement categories.
-
-- Introduced IMeasurable interface
-- Implemented LengthUnit, WeightUnit as enums
-- Removed duplicate quantity classes
-- Ensured compile-time type safety
-- Prevented cross-category comparison
-- Easily supports new units (Volume, Time, Temperature, etc.)
-- Result: Cleaner, scalable, and fully extensible measurement system.
-UC10-[Generic Measurement Refactor](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC10-GenericQuantity/src)
-
-
-### 📅 UC7: Addition with Target Unit Specification
-- Supports addition of two lengths with the ability to explicitly specify the target unit for the result. Extends UC6 by allowing flexibility in choosing the result unit instead of defaulting to the first operand’s unit. Ensures accurate conversions, commutativity, and immutability.
-- Key Concepts
- - Addition of lengths with explicit target unit
- - Cross-unit conversion to any supported length unit
- - Validation for nulls, zero, negative, NaN, and infinite values
- - Commutativity maintained regardless of target unit
- - Floating-point precision handling across units
-- Example: Input: 1.0 ft + 12.0 in → Target Unit: FEET → Output: 2.0 ft Input: 1.0 ft + 12.0 in → Target Unit: INCHES → Output: 24.0 in Input: 1.0 ft + 12.0 in → Target Unit: YARDS → Output: ~0.667 yd Input: 1.0 yd + 3.0 ft → Target Unit: YARDS → Output: 2.0 yd Input: 36.0 in + 1.0 yd → Target Unit: FEET → Output: 6.0 ft
-
-UC7-[Target Unit Specification](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC7-TargetUnitAddition/src)
-
 ### 📅 UC3 : Generic Length Class (DRY Principle)
 - Refactored separate Feet and Inch classes into a single Length class.
 - Introduced LengthUnit enum to represent supported measurement units.
@@ -237,6 +212,26 @@ Quantity(10.0, FEET).subtract(Quantity(6.0, INCH)) → 9.5 FEET
 Quantity(5.0, LITRE).subtract(Quantity(2.0, LITRE)) → 3.0 LITRE
 Quantity(10.0, FEET).divide(Quantity(2.0, FEET)) → 5.0
 UC12-[Subtraction and Division](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC12-SubtractionDivision/src)
+
+---
+
+### 📅 UC13: Centralized Arithmetic Operations Using Enum Strategy
+- Description: UC14 refactors the Quantity Measurement App by introducing an ArithmeticOperation enum (ADD, SUBTRACT, DIVIDE) to centralize arithmetic behavior. All operations now delegate to a single private helper method, eliminating duplicate validation and conversion logic while preserving existing functionality.
+
+- Implementation:
+
+- ArithmeticOperation enum handles operation-specific computation.
+- Private helper method performs validation, base unit conversion, enum dispatch, and result conversion.
+- Add and subtract results are rounded to two decimals.
+- Divide returns a dimensionless raw double value.
+- No changes required to existing unit enums (LengthUnit, WeightUnit, VolumeUnit).
+- Full backward compatibility with UC12 maintained.
+- Example:
+
+Quantity(10.0, FEET).add(Quantity(5.0, FEET)) → 15.00 FEET
+Quantity(10.0, FEET).subtract(Quantity(5.0, FEET)) → 5.00 FEET
+Quantity(10.0, FEET).divide(Quantity(5.0, FEET)) → 2.0
+UC13-[Centralized Arithmetic Operations](https://github.com/shraddhapal27/QuantityMeasurementApp/tree/feature/UC13-CentralizedArithmetic/src)
 
 
 
